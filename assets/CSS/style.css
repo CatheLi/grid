@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Elimino margenes y rellenos predeterminados- considerar padding y borde en el calculo del ancho/alto*/
+
+body {
+    background-color: rgb(231, 231, 231);
+    font-family: 'Roboto',sans-serif;
+    height: 100vh;/*altura del body al 100% de la pantalla*/
+}
+
+main {
+    display: grid;/*grid para distribuir las áreas en el main*/
+    grid-template-areas:/*áreas de las cuadriculas*/
+        "nav nav"
+        "aside section"
+        "footer footer";
+    grid-template-columns: 15% auto;
+    grid-template-rows: 10% auto 7%;
+    height: 100vh;/*altura del main al 100% de la pantalla*/
+    gap: 10px;/*espacio entre las áreas de la cuadricula*/
+}
+
+
+nav {
+    grid-area: nav;
+    background-color: rgb(37, 82, 123);
+    color: white;
+    font-size: 15px;
+    display: flex; /*alineando el contenido en el nav*/
+    justify-content: center;/*centro horizontalmente el contenido del nav*/
+    align-items: center;/*centro verticalmente el contenido del nav*/
+    width: 100%;/*nav usa el 100% del ancho disponible*/
+}
+
+aside {
+    grid-area: aside;
+    display: flex;/*para manejar la disposición de los elementos del aside*/
+    flex-direction: column;/*organizo los elementos del aside en una columna*/
+    justify-content: flex-start;/*alineo los elementos al incio del aside*/
+    align-items: center;/*centro los elementos horizontalmente del aside*/
+    padding-top: 15px;/*espacio en la parte superior*/
+    padding-left: 40px;/*espacio en la izquierda*/
+    height: 100%;
+}
+
+aside h2, aside p{
+    text-align: left;
+    width: 100%;
+    max-width: 200px;
+}
+aside p span{
+    color: gray;
+}
+h2 {
+    margin-bottom: 15px;
+}
+
+p{
+    margin-bottom: 5px;
+}
+
+section {
+    grid-area: section;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap:15px;
+    padding-right: 10px;
+    height: 100%;
+}
+
+.grid {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.grid p{
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.tarjeta {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 90%;
+    height: 90%;
+}
+
+.tarjeta img {
+    width: 90%;
+    height: auto;
+}
+
+
+button {
+    border: none;
+    color: white;
+    width: 100%;
+    height: 2rem;
+    background-color: rgb(37, 82, 123);
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    color:gray;
+
+}
